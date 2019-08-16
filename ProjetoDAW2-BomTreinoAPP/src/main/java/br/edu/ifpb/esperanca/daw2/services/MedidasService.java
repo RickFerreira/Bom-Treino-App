@@ -6,12 +6,12 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
-import br.edu.ifpb.esperanca.daw2.entities.Usuario;
+import br.edu.ifpb.esperanca.daw2.dao.ExerciciosDAO;
+import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class UserService implements Serializable, Service<Usuario> {
+public class MedidasService implements Serializable, Service<Exercicios> {
 
 	/**
 	 * 
@@ -19,15 +19,15 @@ public class UserService implements Serializable, Service<Usuario> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private UsuarioDAO userDAO;
+	private ExerciciosDAO userDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Usuario user) {
-		userDAO.save(user);
+	public void save(Exercicios exercicios) {
+		ExerciciosDAO.save(exercicios);
 	}
 
 	/* (non-Javadoc)
@@ -35,8 +35,8 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Usuario user)  {
-			userDAO.update(user);
+	public void update(Exercicios exercicios)  {
+		ExerciciosDAO.update(exercicios);
 	}
 
 	/* (non-Javadoc)
@@ -44,24 +44,24 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Usuario user) {
-		userDAO.remove(user);
+	public void remove(Exercicios exercicios) {
+		ExerciciosDAO.remove(exercicios);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Usuario getByID(long userId)  {
-			return userDAO.getByID(userId);
+	public Exercicios getByID(long exerciciosId)  {
+			return exerciciosDAO.getByID(exerciciosId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Usuario> getAll() {
-			return userDAO.getAll();
+	public List<Exercicios> getAll() {
+			return exerciciosDAO.getAll();
 	}
 		
 }

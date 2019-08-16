@@ -8,8 +8,8 @@ import javax.inject.Inject;
 
 import br.edu.ifpb.esperanca.daw2.dao.DAO;
 import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Identificavel;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario;
+import br.edu.ifpb.esperanca.daw2.entities.Identificavel;
+import br.edu.ifpb.esperanca.daw2.entities.Usuario;
 
 @FacesConverter(forClass=Usuario.class)
 public class UsuarioConverter implements Converter {

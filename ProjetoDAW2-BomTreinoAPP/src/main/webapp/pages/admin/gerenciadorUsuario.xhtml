@@ -25,12 +25,8 @@
 				label="Nome" style="width:350px" />
 
 			<p:outputLabel value="E-mail: " for="emailField" />
-			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
+			<p:inputText id="emailField" value="#{usuarioBean.entidade.sexo}"
 				label="Nome" style="width:350px" />
-
-			<p:outputLabel value="Nascimento: " for="nascimentoField" />
-			<p:calendar id="nascimentoField"
-				value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -50,15 +46,10 @@
 				<h:outputText value="#{entidade.nome}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">Email</f:facet>
+				<f:facet name="header">Sexo</f:facet>
 				<h:outputText value="#{entidade.email}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">Nascimento</f:facet>
-				<h:outputText value="#{entidade.nascimento}">
-					<f:convertDateTime pattern="dd/MM/yyyy" />
-				</h:outputText>
-			</p:column>
+	
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"

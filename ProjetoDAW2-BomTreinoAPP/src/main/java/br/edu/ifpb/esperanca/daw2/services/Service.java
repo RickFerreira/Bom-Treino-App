@@ -2,7 +2,7 @@ package br.edu.ifpb.esperanca.daw2.services;
 
 import java.util.List;
 
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Identificavel;
+import br.edu.ifpb.esperanca.daw2.entities.Identificavel;
 
 public interface Service<E extends Identificavel> {
 

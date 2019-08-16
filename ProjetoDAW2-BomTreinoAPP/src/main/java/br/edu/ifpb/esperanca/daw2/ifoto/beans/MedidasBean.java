@@ -8,21 +8,21 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.esperanca.daw2.entities.Usuario;
+import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
 import br.edu.ifpb.esperanca.daw2.services.UserService;
 
 @ViewScoped
 @Named
-public class UsuarioBean implements Serializable {
+public class MedidasBean implements Serializable {
 
 	@Inject
 	private UserService service;
 
-	protected Usuario entidade;
+	protected Exercicios entidade;
 
-	protected Collection<Usuario> entidades;
+	protected Collection<Exercicios> entidades;
 
-	public UsuarioBean() {
+	public MedidasBean() {
 	}
 	
 	@PostConstruct
@@ -31,24 +31,24 @@ public class UsuarioBean implements Serializable {
 		entidades = getService().getAll();
 	}
 
-	public void remove(Usuario entidade) {
+	public void remove(Exercicios entidade) {
 		getService().remove(entidade);
 		limpar();
 	}
 
-	public Usuario getEntidade() {
+	public Exercicios getEntidade() {
 		return entidade;
 	}
 
-	public void setEntidade(Usuario entidade) {
+	public void setEntidade(Exercicios entidade) {
 		this.entidade = entidade;
 	}
 
-	public Collection<Usuario> getEntidades() {
+	public Collection<Exercicios> getEntidades() {
 		return entidades;
 	}
 
-	public void setEntidades(Collection<Usuario> entidades) {
+	public void setEntidades(Collection<Exercicios> entidades) {
 		this.entidades = entidades;
 	}
 
@@ -67,11 +67,11 @@ public class UsuarioBean implements Serializable {
 		entidade = newEntidade();
 	}
 
-	protected Usuario newEntidade() {
-		return new Usuario();
+	protected Exercicios newEntidade() {
+		return new Exercicios();
 	}
 
-	public UserService getService() {
+	public ExerciciosService getService() {
 		return service;
 	}
 

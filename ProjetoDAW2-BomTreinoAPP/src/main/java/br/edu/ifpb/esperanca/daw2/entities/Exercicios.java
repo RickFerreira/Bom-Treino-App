@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.entities;
+package br.edu.ifpb.esperanca.daw2.entities;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Execicios implements Identificavel {
+public class Exercicios implements Identificavel {
 
 	@Id
 	private Long id;

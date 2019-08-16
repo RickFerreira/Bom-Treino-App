@@ -6,7 +6,7 @@ import java.util.Collection;
 import javax.inject.Inject;
 
 import br.edu.ifpb.esperanca.daw2.dao.DAO;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Identificavel;
+import br.edu.ifpb.esperanca.daw2.entities.Identificavel;
 import br.edu.ifpb.esperanca.daw2.services.Service;
 
 public abstract class GenericBean<E extends Identificavel> implements Serializable{

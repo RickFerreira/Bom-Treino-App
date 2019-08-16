@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Identificavel;
+import br.edu.ifpb.esperanca.daw2.entities.Identificavel;
 
 @ApplicationScoped
 public abstract class DAO<E extends Identificavel> {
