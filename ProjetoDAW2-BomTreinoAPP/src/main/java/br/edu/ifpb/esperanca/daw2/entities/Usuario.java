@@ -19,6 +19,7 @@ public class Usuario implements Identificavel {
 	private String senha;
 	private String sexo;
 	
+	
 	public Long getId() {
 		return id;
 	}

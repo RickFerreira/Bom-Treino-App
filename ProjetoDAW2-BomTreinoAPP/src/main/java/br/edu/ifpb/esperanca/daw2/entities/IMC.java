@@ -1,11 +1,11 @@
 package br.edu.ifpb.esperanca.daw2.entities;
 
-import javax.persistence.Cacheable;
+import java.util.Calendar;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class IMC implements Identificavel {
@@ -14,6 +14,9 @@ public class IMC implements Identificavel {
 	private Long id;
 	private Double altura;
 	private Double peso;
+	
+	@Temporal(TemporalType.DATE)
+	private Calendar data;
 
 	public Long getId() {
 		return id;

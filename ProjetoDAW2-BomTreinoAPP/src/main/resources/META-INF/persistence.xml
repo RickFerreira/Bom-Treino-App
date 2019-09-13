@@ -12,7 +12,7 @@
 		<class>br.edu.ifpb.esperanca.daw2.ifoto.entities.Treinos</class>
 	
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bomtreino"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.4.170:5432/bomtreino"/>
 			<property name="javax.persistence.jdbc.user" value="bomtreinouser"/>
 			<property name="javax.persistence.jdbc.password" value="bomtreinopassword"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>

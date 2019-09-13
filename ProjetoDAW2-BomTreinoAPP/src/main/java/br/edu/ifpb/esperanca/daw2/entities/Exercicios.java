@@ -1,13 +1,11 @@
 package br.edu.ifpb.esperanca.daw2.entities;
 
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.Cacheable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Exercicios implements Identificavel {
@@ -22,7 +20,16 @@ public class Exercicios implements Identificavel {
 	private int serie;
 	private int repeticao;
 	
+	@ManyToMany(mappedBy="exercicios")
+	private Set<Treinos> treinos;
 	
+	
+	public Set<Treinos> getTreinos() {
+		return treinos;
+	}
+	public void setTreinos(Set<Treinos> treinos) {
+		this.treinos = treinos;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -44,7 +51,7 @@ public class Exercicios implements Identificavel {
 	public Date getDias() {
 		return dias;
 	}
-	public void setDias(Date dias) {
+	public void saetDias(Date dias) {
 		this.dias = dias;
 	}
 	public String getRegiao() {
