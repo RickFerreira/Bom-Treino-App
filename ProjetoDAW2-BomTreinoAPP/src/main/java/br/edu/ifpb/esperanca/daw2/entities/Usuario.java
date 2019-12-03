@@ -11,15 +11,26 @@ import javax.persistence.SequenceGenerator;
 public class Usuario implements Identificavel {
 
 	@Id
-	@GeneratedValue(generator="usuario_seq", strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name="usuario_seq")
+	@GeneratedValue(generator = "usuario_seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "usuario_seq", sequenceName = "usuario_seq")
 	private Long id;
 	private String nome;
 	private String login;
 	private String senha;
 	private String sexo;
 	
+	@OneToMany
+	(mappedBy = "i" + "")
+	private Set<IMC> imc;
 	
+	@OneToMany
+	(mappedBy = "t" + "")
+	private Set<Treinos> treinos;
+	
+	@OneToMany
+	(mappedBy = "m" + "")
+	private Set<Medidas> medidas;
+		
 	public Long getId() {
 		return id;
 	}

@@ -13,11 +13,17 @@ import javax.persistence.SequenceGenerator;
 public class Medidas implements Identificavel {
 
 	@Id
+	@GeneratedValue(generator = "medidas_seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "medidas_seq", sequenceName = "medidas_seq")
 	private Long id;
 	private Date data;
 	private Double medida;
 	private Double peso;
 	private String região;
+	
+	@ManyToOne
+	@JoinColumn (name = "id_m")
+	Medidas m;
 	
 	public Long getId() {
 		return id;

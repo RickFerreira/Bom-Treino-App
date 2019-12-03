@@ -22,9 +22,16 @@ public class Treinos implements Identificavel {
 		this.exercicios = exercicios;
 	}
 	@Id
+	@GeneratedValue(generator = "treinos_seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "treinos_seq", sequenceName = "treinos_seq")
 	private Long id;
 	private String nome;
 	private String descricao;
+	
+	
+	@ManyToOne
+	@JoinColumn (name = "id_t")
+	Treinos t;
 	
 	@ManyToMany
 	@JoinTable(

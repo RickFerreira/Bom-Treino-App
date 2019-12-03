@@ -11,9 +11,15 @@ import javax.persistence.TemporalType;
 public class IMC implements Identificavel {
 
 	@Id
+	@GeneratedValue(generator = "imc_seq", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "imc_seq", sequenceName = "imc_seq")
 	private Long id;
 	private Double altura;
 	private Double peso;
+			
+	@ManyToOne
+	@JoinColumn (name = "id_i")
+	IMC i;
 	
 	@Temporal(TemporalType.DATE)
 	private Calendar data;
