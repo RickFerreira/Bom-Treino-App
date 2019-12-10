@@ -6,12 +6,12 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.dao.ExerciciosDAO;
-import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
+import br.edu.ifpb.esperanca.daw2.dao.IMCDAO;
+import br.edu.ifpb.esperanca.daw2.entities.IMC;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class IMCService implements Serializable, Service<Exercicios> {
+public class IMCService implements Serializable, Service<IMC> {
 
 	/**
 	 * 
@@ -19,15 +19,15 @@ public class IMCService implements Serializable, Service<Exercicios> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ExerciciosDAO userDAO;
+	private IMCDAO imcDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Exercicios exercicios) {
-		ExerciciosDAO.save(exercicios);
+	public void save(IMC imc) {
+		imcDAO.save(imc);
 	}
 
 	/* (non-Javadoc)
@@ -35,8 +35,8 @@ public class IMCService implements Serializable, Service<Exercicios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Exercicios exercicios)  {
-		ExerciciosDAO.update(exercicios);
+	public void update(IMC imc)  {
+		imcDAO.update(imc);
 	}
 
 	/* (non-Javadoc)
@@ -44,24 +44,32 @@ public class IMCService implements Serializable, Service<Exercicios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Exercicios exercicios) {
-		ExerciciosDAO.remove(exercicios);
+	public void remove(IMC imc) {
+		imcDAO.remove(imc);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Exercicios getByID(long exerciciosId)  {
-			return exerciciosDAO.getByID(exerciciosId);
+	public IMC getByID(long imcId)  {
+			return imcDAO.getByID(imcId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Exercicios> getAll() {
-			return exerciciosDAO.getAll();
+	public List<IMC> getAll() {
+			return imcDAO.getAll();
+	}
+
+	public IMCDAO getImcDAO() {
+		return imcDAO;
+	}
+
+	public void setImcDAO(IMCDAO imcDAO) {
+		this.imcDAO = imcDAO;
 	}
 		
 }

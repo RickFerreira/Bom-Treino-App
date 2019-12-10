@@ -6,12 +6,12 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.dao.ExerciciosDAO;
-import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
+import br.edu.ifpb.esperanca.daw2.dao.TreinosDAO;
+import br.edu.ifpb.esperanca.daw2.entities.Treinos;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class TreinosService implements Serializable, Service<Exercicios> {
+public class TreinosService implements Serializable, Service<Treinos> {
 
 	/**
 	 * 
@@ -19,15 +19,15 @@ public class TreinosService implements Serializable, Service<Exercicios> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ExerciciosDAO userDAO;
+	private TreinosDAO treinosDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Exercicios exercicios) {
-		ExerciciosDAO.save(exercicios);
+	public void save(Treinos treinos) {
+		treinosDAO.save(treinos);
 	}
 
 	/* (non-Javadoc)
@@ -35,8 +35,8 @@ public class TreinosService implements Serializable, Service<Exercicios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Exercicios exercicios)  {
-		ExerciciosDAO.update(exercicios);
+	public void update(Treinos treinos)  {
+		treinosDAO.update(treinos);
 	}
 
 	/* (non-Javadoc)
@@ -44,24 +44,24 @@ public class TreinosService implements Serializable, Service<Exercicios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Exercicios exercicios) {
-		ExerciciosDAO.remove(exercicios);
+	public void remove(Treinos treinos) {
+		treinosDAO.remove(treinos);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Exercicios getByID(long exerciciosId)  {
-			return exerciciosDAO.getByID(exerciciosId);
+	public Treinos getByID(long treinosId)  {
+			return treinosDAO.getByID(treinosId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Exercicios> getAll() {
-			return exerciciosDAO.getAll();
+	public List<Treinos> getAll() {
+			return treinosDAO.getAll();
 	}
 		
 }

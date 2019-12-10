@@ -6,12 +6,12 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.dao.ExerciciosDAO;
-import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
+import br.edu.ifpb.esperanca.daw2.dao.MedidasDAO;
+import br.edu.ifpb.esperanca.daw2.entities.Medidas;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class MedidasService implements Serializable, Service<Exercicios> {
+public class MedidasService implements Serializable, Service<Medidas> {
 
 	/**
 	 * 
@@ -19,15 +19,15 @@ public class MedidasService implements Serializable, Service<Exercicios> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ExerciciosDAO userDAO;
+	private MedidasDAO medidasDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Exercicios exercicios) {
-		ExerciciosDAO.save(exercicios);
+	public void save(Medidas medidas) {
+		medidasDAO.save(medidas);
 	}
 
 	/* (non-Javadoc)
@@ -35,8 +35,8 @@ public class MedidasService implements Serializable, Service<Exercicios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Exercicios exercicios)  {
-		ExerciciosDAO.update(exercicios);
+	public void update(Medidas medidas)  {
+		medidasDAO.update(medidas);
 	}
 
 	/* (non-Javadoc)
@@ -44,24 +44,24 @@ public class MedidasService implements Serializable, Service<Exercicios> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Exercicios exercicios) {
-		ExerciciosDAO.remove(exercicios);
+	public void remove(Medidas medidas) {
+		medidasDAO.remove(medidas);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Exercicios getByID(long exerciciosId)  {
-			return exerciciosDAO.getByID(exerciciosId);
+	public Medidas getByID(long medidasId)  {
+			return medidasDAO.getByID(medidasId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Exercicios> getAll() {
-			return exerciciosDAO.getAll();
+	public List<Medidas> getAll() {
+			return medidasDAO.getAll();
 	}
 		
 }

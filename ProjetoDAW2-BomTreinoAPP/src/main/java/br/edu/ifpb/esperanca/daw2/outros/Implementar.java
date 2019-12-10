@@ -1,6 +1,23 @@
+package br.edu.ifpb.esperanca.daw2.outros;
+
 import java.util.Date;
 
-public class Implementar {
+import br.edu.ifpb.esperanca.daw2.dao.DAO;
+import br.edu.ifpb.esperanca.daw2.dao.ExerciciosDAO;
+import br.edu.ifpb.esperanca.daw2.dao.IMCDAO;
+import br.edu.ifpb.esperanca.daw2.dao.MedidasDAO;
+import br.edu.ifpb.esperanca.daw2.dao.TreinosDAO;
+import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
+import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
+import br.edu.ifpb.esperanca.daw2.entities.IMC;
+import br.edu.ifpb.esperanca.daw2.entities.Medidas;
+import br.edu.ifpb.esperanca.daw2.entities.Treinos;
+import br.edu.ifpb.esperanca.daw2.entities.Usuario;
+import br.edu.ifpb.esperanca.daw2.exceptions.LoginInvalidoException;
+import br.edu.ifpb.esperanca.daw2.exceptions.NomeInvalidoException;
+import br.edu.ifpb.esperanca.daw2.exceptions.RegiaoInvalidoException;
+
+public class Implementar implements Interface{
 
 	@Override
 	public Usuario addUsuario(String nome, String login, String senha, String sexo)
@@ -8,7 +25,7 @@ public class Implementar {
 		if (nome == null || nome.equals("")) {
 			throw new NomeInvalidoException();
 		}
-		DAO<Usuario> dao = new DAO<Usuario>();
+		DAO<Usuario> dao = new UsuarioDAO();
 		Usuario u = new Usuario();
 		u.setNome(nome);
 		u.setLogin(login);
@@ -24,7 +41,7 @@ public class Implementar {
 		if (login == null || login.equals("")) {
 			throw new LoginInvalidoException();
 		}
-		DAO<Usuario> dao = new DAO<Usuario>();
+		DAO<Usuario> dao = new UsuarioDAO();
 		Usuario u = new Usuario();
 		u.setLogin(login);
 		u.setSenha(senha);
@@ -37,9 +54,9 @@ public class Implementar {
 	@Override
 	public Treinos addTreinos(String nome, String descricao) throws NomeInvalidoException {
 		if (nome == null || nome.equals("")) {
-			throw new LoginInvalidoException();
+			throw new NomeInvalidoException();
 		}
-		DAO<Treinos> dao = new DAO<Treinos>();
+		DAO<Treinos> dao = new TreinosDAO();
 		Treinos t = new Treinos();
 		t.setNome(nome);
 		t.setDescricao(descricao);
@@ -51,9 +68,9 @@ public class Implementar {
 	@Override
 	public Treinos removeTreinos(String nome) throws NomeInvalidoException {
 		if (nome == null || nome.equals("")) {
-			throw new LoginInvalidoException();
+			throw new NomeInvalidoException();
 		}
-		DAO<Treinos> dao = new DAO<Treinos>();
+		DAO<Treinos> dao = new TreinosDAO();
 		Treinos t = new Treinos();
 		t.setNome(nome);
 		t.remove(t);
@@ -63,7 +80,7 @@ public class Implementar {
 
 	@Override
 	public Medidas addMedidas(Date data, Double medida, Double peso, String regiao) throws RegiaoInvalidoException {
-		DAO<Medidas> dao = new DAO<Medidas>();
+		DAO<Medidas> dao = new MedidasDAO();
 		Medidas m = new Medidas();
 		m.setData(data);
 		m.setMedida(medida);
@@ -76,7 +93,7 @@ public class Implementar {
 	
 	@Override
 	public Medidas atualizaMedidas (Date data, Double medida, Double peso, String regiao) throws RegiaoInvalidoException{
-		DAO<Medidas> dao = new DAO<Medidas>();
+		DAO<Medidas> dao = new MedidasDAO();
 		Medidas m = new Medidas();
 		m.setData(data);
 		m.setMedida(medida);
@@ -89,7 +106,7 @@ public class Implementar {
 	
 	@Override
 	public Medidas RemoveMedidas (Date data, Double medida, Double peso, String regiao) throws RegiaoInvalidoException{
-		DAO<Medidas> dao = new DAO<Medidas>();
+		DAO<Medidas> dao = new MedidasDAO();
 		Medidas m = new Medidas();
 		m.setData(data);
 		m.setMedida(medida);
@@ -102,7 +119,7 @@ public class Implementar {
 	
 	@Override
 	public IMC verificaIMC (Double altura, Double peso) {
-		DAO<IMC> dao = new DAO<IMC>();
+		DAO<IMC> dao = new IMCDAO();
 		IMC i = new IMC();
 		i.setAltura(altura);
 		i.setPeso(peso);
@@ -116,7 +133,7 @@ public class Implementar {
 		if (nome == null || nome.equals("")) {
 			throw new NomeInvalidoException();
 		}
-		DAO<Exercicios> dao = new DAO<Exercicios>();
+		DAO<Exercicios> dao = new ExerciciosDAO();
 		Exercicios e = new Exercicios();
 		e.setNome(nome);
 		e.setDescricao(descricao);
@@ -135,7 +152,7 @@ public class Implementar {
 		if (nome == null || nome.equals("")) {
 			throw new NomeInvalidoException();
 		}
-		DAO<Exercicios> dao = new DAO<Exercicios>();
+		DAO<Exercicios> dao = new ExerciciosDAO();
 		Exercicios e = new Exercicios();
 		e.setNome(nome);
 		e.setDescricao(descricao);

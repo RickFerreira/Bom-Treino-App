@@ -4,15 +4,26 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Perfil </title>
+	<title>Gerenciador de Usuário </title>
 </h:head>
 
 
 <h:body>
 	<p:messages />
+	
+	<h:form id="formMenu">
+		<p:menubar>
+			<f:facet name="options">
+						Olá, #{usuarioBean.userLogin}
+						<p:commandButton id="menuItemLogout" value="Logout"
+					icon="fa fa-fw fa-sign-out" action="#{usuarioBean.efetuarLogout}"
+					ajax="false" />
+			</f:facet>
+		</p:menubar>
+	</h:form>
 
 	<h:form>
-		<p:panelGrid columns="2" >
+		<p:panelGrid columns="2" rendered="#{usuarioBean.isUserInRole('PROFESSOR')}">
 			<f:facet name="caption">
 				<h:outputText value="Filtros" />
 			</f:facet>
@@ -31,16 +42,33 @@
 			<p:outputLabel value="Nascimento: " for="nascimentoField" />
 			<p:calendar id="nascimentoField"
 				value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
+				
+			<p:outputLabel value="Login: " for="loginField" />
+			<p:inputText id="loginField"
+				value="#{UsuarioBean.entidade.username}" label="Login"
+				style="width:350px" />
+
+			<p:outputLabel value="Senha: " for="senhaField" />
+			<p:password id="senhaField"
+				value="#{senhaBean.entidade.senha}" label="Senha"
+				style="width:350px" />
+
+			<p:outputLabel value="Grupo: " for="grupoField" />
+			<p:selectOneMenu id="grupoField" value="#{UsuarioBean.entidade.grupo}"
+				label="Grupo" style="width:350px">
+				<f:selectItem itemLabel="OUTROS" itemValue="OUTROS" />
+				<f:selectItem itemLabel="ADMIN" itemValue="ADMIN" />
+			</p:selectOneMenu>
 
 			<p:commandButton id="btnNovo" value="Novo"
-				action="#{usuarioBean.save()}" ajax="false" />
+				action="#{UsuarioBean.save()}" ajax="false"  />
 			<p:commandButton id="btnLimpar" value="Limpar"
-				action="#{usuarioBean.limpar()}" ajax="false" />
+				action="#{UsuarioBean.limpar()}" ajax="false" />
 		</p:panelGrid>
 
 
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
-			value="#{usuarioBean.entidades}">
+			value="#{UsuarioBean.entidades}">
 			<p:column>
 				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{entidade.id}" />

@@ -1,13 +1,11 @@
 package br.edu.ifpb.esperanca.daw2.dao;
 
-import java.util.List;
+import br.edu.ifpb.esperanca.daw2.entities.Medidas;
 
-import br.edu.ifpb.esperanca.daw2.entities.Usuario;
-import br.edu.ifpb.esperanca.daw2.filtros.UsuarioFiltro;
-
-public class MedidasDAO extends DAO<Usuario> {
+public class MedidasDAO extends DAO<Medidas> {
 	
-	public MedidasDAO() {
-		super(Usuario.class);
+	public MedidasDAO(){
+		super(Medidas.class);
 	}
+
 }

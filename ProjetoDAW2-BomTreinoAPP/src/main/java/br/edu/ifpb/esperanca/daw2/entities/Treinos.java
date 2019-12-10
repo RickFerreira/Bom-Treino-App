@@ -2,7 +2,6 @@ package br.edu.ifpb.esperanca.daw2.entities;
 
 import java.util.Set;
 
-import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -57,6 +57,10 @@ public class Treinos implements Identificavel {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	public void remove(Treinos t2) {
+		// TODO Auto-generated method stub
+		
 	}
 		
 }

@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.beans;
+package br.edu.ifpb.esperanca.daw2.beans;
 
 import java.io.Serializable;
 import java.util.Collection;

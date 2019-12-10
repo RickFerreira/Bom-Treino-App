@@ -3,7 +3,12 @@ package br.edu.ifpb.esperanca.daw2.entities;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -41,6 +46,10 @@ public class IMC implements Identificavel {
 	}
 	public void setPeso(Double peso) {
 		this.peso = peso;
+	}
+	public void save(IMC i2) {
+		// TODO Auto-generated method stub
+		
 	}
 		
 }

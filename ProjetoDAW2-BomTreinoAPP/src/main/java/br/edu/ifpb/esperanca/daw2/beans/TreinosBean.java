@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.beans;
+package br.edu.ifpb.esperanca.daw2.beans;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -8,21 +8,21 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
-import br.edu.ifpb.esperanca.daw2.services.UserService;
+import br.edu.ifpb.esperanca.daw2.entities.Treinos;
+import br.edu.ifpb.esperanca.daw2.services.TreinosService;
 
 @ViewScoped
 @Named
-public class ExerciciosBean implements Serializable {
+public class TreinosBean implements Serializable {
 
 	@Inject
-	private UserService service;
+	private TreinosService service;
 
-	protected Exercicios entidade;
+	protected Treinos entidade;
 
-	protected Collection<Exercicios> entidades;
+	protected Collection<Treinos> entidades;
 
-	public ExerciciosBean() {
+	public TreinosBean() {
 	}
 	
 	@PostConstruct
@@ -31,24 +31,24 @@ public class ExerciciosBean implements Serializable {
 		entidades = getService().getAll();
 	}
 
-	public void remove(Exercicios entidade) {
+	public void remove(Treinos entidade) {
 		getService().remove(entidade);
 		limpar();
 	}
 
-	public Exercicios getEntidade() {
+	public Treinos getEntidade() {
 		return entidade;
 	}
 
-	public void setEntidade(Exercicios entidade) {
+	public void setEntidade(Treinos entidade) {
 		this.entidade = entidade;
 	}
 
-	public Collection<Exercicios> getEntidades() {
+	public Collection<Treinos> getEntidades() {
 		return entidades;
 	}
 
-	public void setEntidades(Collection<Exercicios> entidades) {
+	public void setEntidades(Collection<Treinos> entidades) {
 		this.entidades = entidades;
 	}
 
@@ -67,11 +67,11 @@ public class ExerciciosBean implements Serializable {
 		entidade = newEntidade();
 	}
 
-	protected Exercicios newEntidade() {
-		return new Exercicios();
+	protected Treinos newEntidade() {
+		return new Treinos();
 	}
 
-	public ExerciciosService getService() {
+	public TreinosService getService() {
 		return service;
 	}
 

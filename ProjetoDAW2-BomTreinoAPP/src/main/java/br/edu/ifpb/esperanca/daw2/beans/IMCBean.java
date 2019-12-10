@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.beans;
+package br.edu.ifpb.esperanca.daw2.beans;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -8,19 +8,19 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
-import br.edu.ifpb.esperanca.daw2.services.UserService;
+import br.edu.ifpb.esperanca.daw2.entities.IMC;
+import br.edu.ifpb.esperanca.daw2.services.IMCService;
 
 @ViewScoped
 @Named
 public class IMCBean implements Serializable {
 
 	@Inject
-	private UserService service;
+	private IMCService service;
 
-	protected Exercicios entidade;
+	protected IMC entidade;
 
-	protected Collection<Exercicios> entidades;
+	protected Collection<IMC> entidades;
 
 	public IMCBean() {
 	}
@@ -31,24 +31,24 @@ public class IMCBean implements Serializable {
 		entidades = getService().getAll();
 	}
 
-	public void remove(Exercicios entidade) {
+	public void remove(IMC entidade) {
 		getService().remove(entidade);
 		limpar();
 	}
 
-	public Exercicios getEntidade() {
+	public IMC getEntidade() {
 		return entidade;
 	}
 
-	public void setEntidade(Exercicios entidade) {
+	public void setEntidade(IMC entidade) {
 		this.entidade = entidade;
 	}
 
-	public Collection<Exercicios> getEntidades() {
+	public Collection<IMC> getEntidades() {
 		return entidades;
 	}
 
-	public void setEntidades(Collection<Exercicios> entidades) {
+	public void setEntidades(Collection<IMC> entidades) {
 		this.entidades = entidades;
 	}
 
@@ -67,11 +67,11 @@ public class IMCBean implements Serializable {
 		entidade = newEntidade();
 	}
 
-	protected Exercicios newEntidade() {
-		return new Exercicios();
+	protected IMC newEntidade() {
+		return new IMC();
 	}
 
-	public ExerciciosService getService() {
+	public IMCService getService() {
 		return service;
 	}
 

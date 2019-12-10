@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.beans;
+package br.edu.ifpb.esperanca.daw2.beans;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -8,19 +8,19 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
-import br.edu.ifpb.esperanca.daw2.services.UserService;
+import br.edu.ifpb.esperanca.daw2.entities.Medidas;
+import br.edu.ifpb.esperanca.daw2.services.MedidasService;
 
 @ViewScoped
 @Named
 public class MedidasBean implements Serializable {
 
 	@Inject
-	private UserService service;
+	private MedidasService service;
 
-	protected Exercicios entidade;
+	protected Medidas entidade;
 
-	protected Collection<Exercicios> entidades;
+	protected Collection<Medidas> entidades;
 
 	public MedidasBean() {
 	}
@@ -31,24 +31,24 @@ public class MedidasBean implements Serializable {
 		entidades = getService().getAll();
 	}
 
-	public void remove(Exercicios entidade) {
+	public void remove(Medidas entidade) {
 		getService().remove(entidade);
 		limpar();
 	}
 
-	public Exercicios getEntidade() {
+	public Medidas getEntidade() {
 		return entidade;
 	}
 
-	public void setEntidade(Exercicios entidade) {
+	public void setEntidade(Medidas entidade) {
 		this.entidade = entidade;
 	}
 
-	public Collection<Exercicios> getEntidades() {
+	public Collection<Medidas> getEntidades() {
 		return entidades;
 	}
 
-	public void setEntidades(Collection<Exercicios> entidades) {
+	public void setEntidades(Collection<Medidas> entidades) {
 		this.entidades = entidades;
 	}
 
@@ -67,11 +67,11 @@ public class MedidasBean implements Serializable {
 		entidade = newEntidade();
 	}
 
-	protected Exercicios newEntidade() {
-		return new Exercicios();
+	protected Medidas newEntidade() {
+		return new Medidas();
 	}
 
-	public ExerciciosService getService() {
+	public MedidasService getService() {
 		return service;
 	}
 

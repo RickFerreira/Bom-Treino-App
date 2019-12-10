@@ -78,5 +78,9 @@ public class Exercicios implements Identificavel {
 	public void setRepeticao(int repeticao) {
 		this.repeticao = repeticao;
 	}
+	public void setDias(Date dias2) {
+		// TODO Auto-generated method stub
+		
+	}
 		
 }

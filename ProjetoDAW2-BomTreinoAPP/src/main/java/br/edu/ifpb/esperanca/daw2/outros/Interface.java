@@ -1,6 +1,17 @@
+package br.edu.ifpb.esperanca.daw2.outros;
+
 import java.util.Date;
 
-public class Interface {
+import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
+import br.edu.ifpb.esperanca.daw2.entities.IMC;
+import br.edu.ifpb.esperanca.daw2.entities.Medidas;
+import br.edu.ifpb.esperanca.daw2.entities.Treinos;
+import br.edu.ifpb.esperanca.daw2.entities.Usuario;
+import br.edu.ifpb.esperanca.daw2.exceptions.LoginInvalidoException;
+import br.edu.ifpb.esperanca.daw2.exceptions.NomeInvalidoException;
+import br.edu.ifpb.esperanca.daw2.exceptions.RegiaoInvalidoException;
+
+public interface Interface {
 	
 	public Usuario addUsuario(String nome, String login, String senha, String sexo) throws NomeInvalidoException, LoginInvalidoException;
 

@@ -19,7 +19,7 @@ public class ExerciciosService implements Serializable, Service<Exercicios> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ExerciciosDAO userDAO;
+	private ExerciciosDAO exerciciosDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
@@ -27,7 +27,7 @@ public class ExerciciosService implements Serializable, Service<Exercicios> {
 	@Override
 	@TransacionalCdi
 	public void save(Exercicios exercicios) {
-		ExerciciosDAO.save(exercicios);
+		exerciciosDAO.save(exercicios);
 	}
 
 	/* (non-Javadoc)
@@ -36,7 +36,7 @@ public class ExerciciosService implements Serializable, Service<Exercicios> {
 	@Override
 	@TransacionalCdi
 	public void update(Exercicios exercicios)  {
-		ExerciciosDAO.update(exercicios);
+		exerciciosDAO.update(exercicios);
 	}
 
 	/* (non-Javadoc)
@@ -45,7 +45,7 @@ public class ExerciciosService implements Serializable, Service<Exercicios> {
 	@Override
 	@TransacionalCdi
 	public void remove(Exercicios exercicios) {
-		ExerciciosDAO.remove(exercicios);
+		exerciciosDAO.remove(exercicios);
 	}
 
 	/* (non-Javadoc)

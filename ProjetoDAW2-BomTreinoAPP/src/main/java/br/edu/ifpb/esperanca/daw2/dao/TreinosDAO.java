@@ -1,14 +1,12 @@
 package br.edu.ifpb.esperanca.daw2.dao;
 
-import java.util.List;
+import br.edu.ifpb.esperanca.daw2.entities.Treinos;
 
-import br.edu.ifpb.esperanca.daw2.entities.Usuario;
-import br.edu.ifpb.esperanca.daw2.filtros.UsuarioFiltro;
-
-public class TreinosDAO extends DAO<Usuario> {
+public class TreinosDAO extends DAO<Treinos> {
 	
-	public TreinosDAO() {
-		super(Usuario.class);
+	public TreinosDAO(){
+		super(Treinos.class);
 	}
 
 }
+

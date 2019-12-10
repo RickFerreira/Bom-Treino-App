@@ -1,10 +1,12 @@
 package br.edu.ifpb.esperanca.daw2.entities;
 
-import javax.persistence.Cacheable;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -18,6 +20,7 @@ public class Usuario implements Identificavel {
 	private String login;
 	private String senha;
 	private String sexo;
+	private String grupo;
 	
 	@OneToMany
 	(mappedBy = "i" + "")
@@ -60,6 +63,12 @@ public class Usuario implements Identificavel {
 	}
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+	public String getGrupo() {
+		return grupo;
+	}
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
 	}
 		
 }

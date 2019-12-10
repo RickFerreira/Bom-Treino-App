@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.beans;
+package br.edu.ifpb.esperanca.daw2.beans;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -9,20 +9,20 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.edu.ifpb.esperanca.daw2.entities.Exercicios;
-import br.edu.ifpb.esperanca.daw2.services.UserService;
+import br.edu.ifpb.esperanca.daw2.services.ExerciciosService;
 
 @ViewScoped
 @Named
-public class TreinosBean implements Serializable {
+public class ExerciciosBean implements Serializable {
 
 	@Inject
-	private UserService service;
+	private ExerciciosService service;
 
 	protected Exercicios entidade;
 
 	protected Collection<Exercicios> entidades;
 
-	public TreinosBean() {
+	public ExerciciosBean() {
 	}
 	
 	@PostConstruct
