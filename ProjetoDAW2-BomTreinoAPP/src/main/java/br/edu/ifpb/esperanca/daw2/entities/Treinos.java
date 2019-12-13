@@ -30,8 +30,8 @@ public class Treinos implements Identificavel {
 	
 	
 	@ManyToOne
-	@JoinColumn (name = "id_t")
-	Treinos t;
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
 	
 	@ManyToMany
 	@JoinTable(
@@ -57,10 +57,6 @@ public class Treinos implements Identificavel {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-	public void remove(Treinos t2) {
-		// TODO Auto-generated method stub
-		
 	}
 		
 }

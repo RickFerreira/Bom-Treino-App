@@ -23,8 +23,8 @@ public class Medidas implements Identificavel {
 	private String região;
 	
 	@ManyToOne
-	@JoinColumn (name = "id_m")
-	Medidas m;
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
 	
 	public Long getId() {
 		return id;

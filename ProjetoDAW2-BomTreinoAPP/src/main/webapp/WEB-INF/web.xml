@@ -25,7 +25,7 @@
 	</session-config>
 	<login-config>
 		<auth-method>FORM</auth-method>
-		<realm-name>ifotoJdbcRealm</realm-name>
+		<realm-name>bomtreinoJdbcRealm</realm-name>
 		<form-login-config>
 			<form-login-page>/pages/public/login.xhtml</form-login-page>
 			<form-error-page>/pages/public/login.xhtml?error=true</form-error-page>

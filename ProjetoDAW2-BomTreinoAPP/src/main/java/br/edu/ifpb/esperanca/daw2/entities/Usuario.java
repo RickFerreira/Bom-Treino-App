@@ -22,17 +22,14 @@ public class Usuario implements Identificavel {
 	private String sexo;
 	private String grupo;
 	
-	@OneToMany
-	(mappedBy = "i" + "")
-	private Set<IMC> imc;
+	@OneToMany(mappedBy="usuario")
+	Set<Usuario> usuario;
 	
-	@OneToMany
-	(mappedBy = "t" + "")
-	private Set<Treinos> treinos;
+	@OneToMany(mappedBy="usuario")
+	Set<Usuario> usuario;
 	
-	@OneToMany
-	(mappedBy = "m" + "")
-	private Set<Medidas> medidas;
+	@OneToMany(mappedBy="usuario")
+	Set<Usuario> usuario;
 		
 	public Long getId() {
 		return id;

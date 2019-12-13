@@ -9,10 +9,23 @@
 
 
 <h:body>
-	<p:messages />
-
-	<h:form>
-		
-	</h:form>
+	
+<h:form>    
+    <h:panelGrid columns="2" cellpadding="5">
+        <h:outputText value="NOME: " />
+        <p:keyboard id="Nome" value="#{keyboardView.value1}" />
+ 
+        <h:outputText value="DESCRIÇÃO: " />
+        <p:keyboard id="Descricao" value="#{keyboardView.value2}" layout="qwertyBasic" />
+ 
+        <h:outputText value="DIAS DA SEMANA: " />
+        <p:keyboard id="Semana" value="#{keyboardView.value3}" layout="alphabetic" />
+    <br />
+    
+        <p:commandButton value="Criar treino" update="display" oncomplete="PF('dlg').show()" />
+    
+        </h:panelGrid>
+    </p:dialog>
+</h:form>
 </h:body>
 </html>

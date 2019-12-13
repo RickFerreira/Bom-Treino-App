@@ -23,8 +23,8 @@ public class IMC implements Identificavel {
 	private Double peso;
 			
 	@ManyToOne
-	@JoinColumn (name = "id_i")
-	IMC i;
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
 	
 	@Temporal(TemporalType.DATE)
 	private Calendar data;
@@ -46,10 +46,6 @@ public class IMC implements Identificavel {
 	}
 	public void setPeso(Double peso) {
 		this.peso = peso;
-	}
-	public void save(IMC i2) {
-		// TODO Auto-generated method stub
-		
 	}
 		
 }

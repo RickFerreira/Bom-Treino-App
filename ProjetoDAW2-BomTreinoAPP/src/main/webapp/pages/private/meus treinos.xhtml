@@ -9,9 +9,23 @@
 
 
 <h:body>
-	<p:messages />
 
 	<h:form>
+		<style type="text/css">
+		    body .ui-staticmessage.ui-message {
+		        width: 100%;
+		}
+		</style>
+			 
+		 
+		<div class="ui-g">
+		    <div class="ui-g-12 ui-md-3">
+		        <p:staticMessage severity="ABC" summary="Treino ABC!" detail="Foco completo" />
+		    </div>
+		    <div class="ui-g-12 ui-md-3">
+		        <p:staticMessage severity="Richard" summary="Matheus!" detail="Foco em superior" />
+		    </div>
+		</div>
 		
 	</h:form>
 </h:body>

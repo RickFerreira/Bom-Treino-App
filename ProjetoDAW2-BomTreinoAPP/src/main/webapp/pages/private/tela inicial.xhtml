@@ -12,6 +12,12 @@
 	<p:messages />
 
 	<h:form>
+	
+	    <p:growl id="growl" life="2000" />
+	     
+	    <p:commandButton value="Professor" id="professor" update="growl" action="#{buttonView.buttonAction}" style="margin-right:20px;" styleClass="ui-priority-primary" />
+	 
+	    <p:commandButton value="Aluno" id="aluno" action="#{buttonView.buttonAction}" style="margin-right:20px;" ajax="false" />
 		
 	</h:form>
 </h:body>
